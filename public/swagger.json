@@ -1,0 +1,192 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Content Management System API",
+    "version": "1.0.0",
+    "description": "Comprehensive REST API for managing posts, categories, and pages",
+    "contact": {
+      "email": "api@example.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/api/v1",
+      "description": "Local Development Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Posts",
+      "description": "Operations related to blog posts"
+    },
+    {
+      "name": "Categories",
+      "description": "Operations related to post categories"
+    },
+    {
+      "name": "Pages",
+      "description": "Operations related to static pages"
+    }
+  ],
+  "paths": {
+    "/posts": {
+      "get": {
+        "tags": ["Posts"],
+        "summary": "Get all posts",
+        "description": "Retrieve a paginated list of posts with filtering and search capabilities",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "description": "Search term to filter results",
+            "schema": {
+              "type": "string",
+              "example": "laravel"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Filter by status",
+            "schema": {
+              "type": "string",
+              "enum": ["draft", "published"],
+              "example": "published"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Posts retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Post"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Posts"],
+        "summary": "Create a new post",
+        "description": "Create a new blog post",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": ["title", "content", "status"],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "example": "My New Post"
+                  },
+                  "content": {
+                    "type": "string",
+                    "example": "<p>Post content</p>"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": ["draft", "published"],
+                    "example": "published"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Post created successfully"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": ["Categories"],
+        "summary": "Get all categories",
+        "responses": {
+          "200": {
+            "description": "Categories retrieved successfully"
+          }
+        }
+      }
+    },
+    "/pages": {
+      "get": {
+        "tags": ["Pages"],
+        "summary": "Get all pages",
+        "responses": {
+          "200": {
+            "description": "Pages retrieved successfully"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Post": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "title": {
+            "type": "string",
+            "example": "Getting Started with Laravel"
+          },
+          "slug": {
+            "type": "string",
+            "example": "getting-started-with-laravel"
+          },
+          "content": {
+            "type": "string",
+            "example": "<p>Post content</p>"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["draft", "published"],
+            "example": "published"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "Technology"
+          },
+          "slug": {
+            "type": "string",
+            "example": "technology"
+          }
+        }
+      }
+    }
+  }
+} 
