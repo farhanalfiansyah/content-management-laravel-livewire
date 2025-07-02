@@ -12,136 +12,14 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 /**
- * @OA\Schema(
- *     schema="Post",
- *     @OA\Property(property="id", type="integer", example=1),
- *     @OA\Property(property="title", type="string", example="Getting Started with Laravel"),
- *     @OA\Property(property="slug", type="string", example="getting-started-with-laravel"),
- *     @OA\Property(property="short_description", type="string", example="Learn the basics of Laravel framework"),
- *     @OA\Property(property="image_url", type="string", example="http://domain.com/images/posts/image.jpg"),
- *     @OA\Property(property="status", type="string", enum={"draft", "published"}, example="published"),
- *     @OA\Property(property="published_at", type="string", format="date-time", example="2024-01-15T10:30:00.000000Z"),
- *     @OA\Property(property="created_at", type="string", format="date-time", example="2024-01-15T10:25:00.000000Z"),
- *     @OA\Property(property="updated_at", type="string", format="date-time", example="2024-01-15T10:30:00.000000Z"),
- *     @OA\Property(
- *         property="author",
- *         @OA\Property(property="id", type="integer", example=1),
- *         @OA\Property(property="name", type="string", example="John Doe"),
- *         @OA\Property(property="email", type="string", example="john@example.com")
- *     ),
- *     @OA\Property(
- *         property="categories",
- *         type="array",
- *         @OA\Items(
- *             @OA\Property(property="id", type="integer", example=1),
- *             @OA\Property(property="name", type="string", example="Technology"),
- *             @OA\Property(property="slug", type="string", example="technology")
- *         )
- *     )
- * )
+ * Post API Controller
  * 
- * @OA\Schema(
- *     schema="PostDetailed",
- *     allOf={
- *         @OA\Schema(ref="#/components/schemas/Post"),
- *         @OA\Schema(
- *             @OA\Property(property="content", type="string", example="<p>Full post content with HTML...</p>")
- *         )
- *     }
- * )
- * 
- * @OA\Schema(
- *     schema="PostCreateRequest",
- *     required={"title", "content", "status"},
- *     @OA\Property(property="title", type="string", maxLength=255, example="My New Post"),
- *     @OA\Property(property="slug", type="string", maxLength=255, example="my-new-post"),
- *     @OA\Property(property="short_description", type="string", maxLength=500, example="Brief description of the post"),
- *     @OA\Property(property="content", type="string", example="<p>Full post content with HTML...</p>"),
- *     @OA\Property(property="status", type="string", enum={"draft", "published"}, example="published"),
- *     @OA\Property(property="published_at", type="string", format="date", example="2024-01-15"),
- *     @OA\Property(
- *         property="category_ids",
- *         type="array",
- *         @OA\Items(type="integer"),
- *         example={1, 2, 3}
- *     ),
- *     @OA\Property(property="image", type="string", format="binary", description="Image file upload")
- * )
- * 
- * @OA\Schema(
- *     schema="PostUpdateRequest",
- *     @OA\Property(property="title", type="string", maxLength=255, example="Updated Post Title"),
- *     @OA\Property(property="slug", type="string", maxLength=255, example="updated-post-title"),
- *     @OA\Property(property="short_description", type="string", maxLength=500, example="Updated description"),
- *     @OA\Property(property="content", type="string", example="<p>Updated post content...</p>"),
- *     @OA\Property(property="status", type="string", enum={"draft", "published"}, example="published"),
- *     @OA\Property(property="published_at", type="string", format="date", example="2024-01-15"),
- *     @OA\Property(
- *         property="category_ids",
- *         type="array",
- *         @OA\Items(type="integer"),
- *         example={1, 2}
- *     ),
- *     @OA\Property(property="image", type="string", format="binary", description="Image file upload")
- * )
+ * Handles CRUD operations for posts with validation and relationships
  */
 class PostController extends Controller
 {
     /**
-     * @OA\Get(
-     *     path="/api/v1/posts",
-     *     tags={"Posts"},
-     *     summary="Get all posts",
-     *     description="Retrieve a paginated list of posts with filtering and search capabilities",
-     *     @OA\Parameter(ref="#/components/parameters/search"),
-     *     @OA\Parameter(ref="#/components/parameters/status"),
-     *     @OA\Parameter(
-     *         name="category",
-     *         in="query",
-     *         description="Filter by category ID",
-     *         required=false,
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     @OA\Parameter(
-     *         name="author",
-     *         in="query",
-     *         description="Filter by author ID",
-     *         required=false,
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     @OA\Parameter(
-     *         name="include_drafts",
-     *         in="query",
-     *         description="Include draft posts",
-     *         required=false,
-     *         @OA\Schema(type="boolean", example=false)
-     *     ),
-     *     @OA\Parameter(ref="#/components/parameters/sort_by"),
-     *     @OA\Parameter(ref="#/components/parameters/sort_order"),
-     *     @OA\Parameter(ref="#/components/parameters/per_page"),
-     *     @OA\Parameter(ref="#/components/parameters/page"),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Posts retrieved successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/PaginatedResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(
-     *                         property="data",
-     *                         type="array",
-     *                         @OA\Items(ref="#/components/schemas/Post")
-     *                     )
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Get all posts
      */
     public function index(Request $request): JsonResponse
     {
@@ -249,41 +127,7 @@ class PostController extends Controller
     }
 
     /**
-     * @OA\Post(
-     *     path="/api/v1/posts",
-     *     tags={"Posts"},
-     *     summary="Create a new post",
-     *     description="Create a new blog post with categories and optional image upload",
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\MediaType(
-     *             mediaType="multipart/form-data",
-     *             @OA\Schema(ref="#/components/schemas/PostCreateRequest")
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=201,
-     *         description="Post created successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/SuccessResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(property="data", ref="#/components/schemas/PostDetailed")
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=422,
-     *         description="Validation error",
-     *         @OA\JsonContent(ref="#/components/schemas/ValidationErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Create a new post
      */
     public function store(Request $request): JsonResponse
     {
@@ -359,7 +203,7 @@ class PostController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Post created successfully',
-                'data' => $this->formatPostResponse($post)
+                'data' => $this->formatPostResponse($post, true)
             ], 201);
 
         } catch (\Exception $e) {
@@ -372,41 +216,7 @@ class PostController extends Controller
     }
 
     /**
-     * @OA\Get(
-     *     path="/api/v1/posts/{slug}",
-     *     tags={"Posts"},
-     *     summary="Get a specific post",
-     *     description="Retrieve a single post by its slug, including full content",
-     *     @OA\Parameter(
-     *         name="slug",
-     *         in="path",
-     *         required=true,
-     *         description="Post slug",
-     *         @OA\Schema(type="string", example="getting-started-with-laravel")
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Post retrieved successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/SuccessResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(property="data", ref="#/components/schemas/PostDetailed")
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Post not found",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Get a specific post
      */
     public function show(string $slug): JsonResponse
     {
@@ -437,53 +247,7 @@ class PostController extends Controller
     }
 
     /**
-     * @OA\Put(
-     *     path="/api/v1/posts/{id}",
-     *     tags={"Posts"},
-     *     summary="Update a post",
-     *     description="Update an existing post by ID",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="Post ID",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\MediaType(
-     *             mediaType="multipart/form-data",
-     *             @OA\Schema(ref="#/components/schemas/PostUpdateRequest")
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Post updated successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/SuccessResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(property="data", ref="#/components/schemas/PostDetailed")
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Post not found",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=422,
-     *         description="Validation error",
-     *         @OA\JsonContent(ref="#/components/schemas/ValidationErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Update a post
      */
     public function update(Request $request, string $id): JsonResponse
     {
@@ -578,34 +342,7 @@ class PostController extends Controller
     }
 
     /**
-     * @OA\Delete(
-     *     path="/api/v1/posts/{id}",
-     *     tags={"Posts"},
-     *     summary="Delete a post",
-     *     description="Delete a post by ID, including associated image and category relationships",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="Post ID",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Post deleted successfully",
-     *         @OA\JsonContent(ref="#/components/schemas/SuccessResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Post not found",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Delete a post
      */
     public function destroy(string $id): JsonResponse
     {
@@ -641,51 +378,7 @@ class PostController extends Controller
     }
 
     /**
-     * @OA\Get(
-     *     path="/api/v1/categories/{slug}/posts",
-     *     tags={"Posts"},
-     *     summary="Get posts by category",
-     *     description="Retrieve all posts belonging to a specific category",
-     *     @OA\Parameter(
-     *         name="slug",
-     *         in="path",
-     *         required=true,
-     *         description="Category slug",
-     *         @OA\Schema(type="string", example="technology")
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Posts retrieved successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/PaginatedResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(
-     *                         property="data",
-     *                         type="array",
-     *                         @OA\Items(ref="#/components/schemas/Post")
-     *                     ),
-     *                     @OA\Property(
-     *                         property="category",
-     *                         @OA\Property(property="id", type="integer", example=1),
-     *                         @OA\Property(property="name", type="string", example="Technology"),
-     *                         @OA\Property(property="slug", type="string", example="technology")
-     *                     )
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Category not found",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Get posts by category
      */
     public function byCategory(string $categorySlug): JsonResponse
     {

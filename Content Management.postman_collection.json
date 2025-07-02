@@ -1,0 +1,2916 @@
+{
+	"info": {
+		"_postman_id": "f0e1b2ee-ca61-472b-94a0-6c1827b7b66b",
+		"name": "Content Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6279173"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "api/v1/posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:09:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 34,\n            \"title\": \"POST TESTING EDITED\",\n            \"slug\": \"post-testing-edited\",\n            \"short_description\": \"SHORT DESC TESTING EDITED\",\n            \"image_url\": \"http://localhost:8000/images/posts/1751350505_ao2XRMpXmJ.jpg\",\n            \"status\": \"published\",\n            \"published_at\": \"2025-07-01T06:15:00.000000Z\",\n            \"created_at\": \"2025-07-01T06:15:05.000000Z\",\n            \"updated_at\": \"2025-07-01T06:15:43.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Cyber Attack\",\n                    \"slug\": \"cyber-attack\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Nexus Club\",\n                    \"slug\": \"nexus-club\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Web Development\",\n                    \"slug\": \"web-development\"\n                }\n            ]\n        },\n        {\n            \"id\": 33,\n            \"title\": \"Testing Post edited\",\n            \"slug\": \"testing-post-edited\",\n            \"short_description\": \"Short Description Post Edited\",\n            \"image_url\": \"http://localhost:8000/images/posts/1751346990_AW6oMbTTSK.jpg\",\n            \"status\": \"published\",\n            \"published_at\": \"2025-07-01T05:21:00.000000Z\",\n            \"created_at\": \"2025-07-01T05:16:30.000000Z\",\n            \"updated_at\": \"2025-07-01T05:21:24.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 6,\n                    \"name\": \"Digital Marketing\",\n                    \"slug\": \"digital-marketing\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"Design\",\n                    \"slug\": \"design\"\n                },\n                {\n                    \"id\": 10,\n                    \"name\": \"Laravel\",\n                    \"slug\": \"laravel\"\n                }\n            ]\n        },\n        {\n            \"id\": 24,\n            \"title\": \"Expedita quisquam nulla ad.\",\n            \"slug\": \"expedita-quisquam-nulla-ad\",\n            \"short_description\": \"Hic optio odit magnam est quo rem. Odit facilis iusto nihil eius eveniet numquam.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2025-04-18T07:05:43.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Nexus Club\",\n                    \"slug\": \"nexus-club\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Business Strategy\",\n                    \"slug\": \"business-strategy\"\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Facilis id sequi eum molestiae.\",\n            \"slug\": \"facilis-id-sequi-eum-molestiae\",\n            \"short_description\": \"Molestiae repellendus quae quod voluptas saepe quae consectetur. Soluta id est voluptate ullam et.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2025-03-29T05:07:35.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Web Development\",\n                    \"slug\": \"web-development\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Business Strategy\",\n                    \"slug\": \"business-strategy\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"Design\",\n                    \"slug\": \"design\"\n                }\n            ]\n        },\n        {\n            \"id\": 16,\n            \"title\": \"Ut aut accusantium sunt molestias sit.\",\n            \"slug\": \"ut-aut-accusantium-sunt-molestias-sit\",\n            \"short_description\": \"Totam aut qui deserunt debitis aliquam laboriosam. Facere ab quisquam numquam.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2025-02-16T16:49:44.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Nexus Club\",\n                    \"slug\": \"nexus-club\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Web Development\",\n                    \"slug\": \"web-development\"\n                }\n            ]\n        },\n        {\n            \"id\": 13,\n            \"title\": \"Odit amet perferendis optio saepe voluptas.\",\n            \"slug\": \"odit-amet-perferendis-optio-saepe-voluptas\",\n            \"short_description\": \"Fuga atque maiores alias ea sapiente quod. Iusto consequatur quidem omnis voluptatibus.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2025-02-10T10:11:14.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Nexus Club\",\n                    \"slug\": \"nexus-club\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"Mobile Apps\",\n                    \"slug\": \"mobile-apps\"\n                }\n            ]\n        },\n        {\n            \"id\": 21,\n            \"title\": \"Sint qui voluptas iusto eum quo.\",\n            \"slug\": \"sint-qui-voluptas-iusto-eum-quo\",\n            \"short_description\": \"Libero quis temporibus non id quam est. Quaerat et nam sed ut.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2025-01-17T23:32:41.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 8,\n                    \"name\": \"Design\",\n                    \"slug\": \"design\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Quia blanditiis harum deserunt voluptas tempora et.\",\n            \"slug\": \"quia-blanditiis-harum-deserunt-voluptas-tempora-et\",\n            \"short_description\": \"Saepe velit harum natus sunt. Quia quam fugit necessitatibus debitis id ducimus deserunt.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2025-01-10T00:12:38.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Nexus Club\",\n                    \"slug\": \"nexus-club\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"Mobile Apps\",\n                    \"slug\": \"mobile-apps\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Business Strategy\",\n                    \"slug\": \"business-strategy\"\n                }\n            ]\n        },\n        {\n            \"id\": 7,\n            \"title\": \"Ex possimus assumenda vel.\",\n            \"slug\": \"ex-possimus-assumenda-vel\",\n            \"short_description\": \"Quia aut est ab cum eum pariatur provident. Suscipit mollitia quaerat minus necessitatibus.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2024-11-28T02:03:02.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"Technology\",\n                    \"slug\": \"technology\"\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"Digital Marketing\",\n                    \"slug\": \"digital-marketing\"\n                },\n                {\n                    \"id\": 9,\n                    \"name\": \"Programming\",\n                    \"slug\": \"programming\"\n                }\n            ]\n        },\n        {\n            \"id\": 20,\n            \"title\": \"Impedit voluptatem neque qui ut id.\",\n            \"slug\": \"impedit-voluptatem-neque-qui-ut-id\",\n            \"short_description\": \"Dolorem adipisci odit natus dolores. Consectetur aliquam tempora quo natus natus veritatis autem.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2024-10-29T22:55:18.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Cyber Attack\",\n                    \"slug\": \"cyber-attack\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Business Strategy\",\n                    \"slug\": \"business-strategy\"\n                }\n            ]\n        },\n        {\n            \"id\": 22,\n            \"title\": \"Quis facere dolorum et ipsam molestiae.\",\n            \"slug\": \"quis-facere-dolorum-et-ipsam-molestiae\",\n            \"short_description\": \"Et veritatis repellendus eius qui enim. Modi nostrum velit est ea.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2024-10-13T01:29:46.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"Technology\",\n                    \"slug\": \"technology\"\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"Digital Marketing\",\n                    \"slug\": \"digital-marketing\"\n                }\n            ]\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Quo unde velit blanditiis eum.\",\n            \"slug\": \"quo-unde-velit-blanditiis-eum\",\n            \"short_description\": \"Porro soluta et reprehenderit reprehenderit blanditiis. Consequuntur accusantium sapiente molestiae aut et.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2024-09-24T17:35:17.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Nexus Club\",\n                    \"slug\": \"nexus-club\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"Web Development\",\n                    \"slug\": \"web-development\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Business Strategy\",\n                    \"slug\": \"business-strategy\"\n                }\n            ]\n        },\n        {\n            \"id\": 25,\n            \"title\": \"Aliquam consequatur nostrum velit vel cum libero.\",\n            \"slug\": \"aliquam-consequatur-nostrum-velit-vel-cum-libero\",\n            \"short_description\": \"Impedit eos quia praesentium quia et ab. Sunt dicta excepturi harum repellendus dolores hic.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2024-08-19T10:49:38.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Cyber Attack\",\n                    \"slug\": \"cyber-attack\"\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"Design\",\n                    \"slug\": \"design\"\n                }\n            ]\n        },\n        {\n            \"id\": 23,\n            \"title\": \"Voluptatem labore ut laboriosam illo tenetur deleniti perferendis.\",\n            \"slug\": \"voluptatem-labore-ut-laboriosam-illo-tenetur-deleniti-perferendis\",\n            \"short_description\": \"Est non mollitia odio doloribus. Ea aut similique dolores reiciendis et aut.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2024-08-12T10:02:40.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Cyber Attack\",\n                    \"slug\": \"cyber-attack\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Nexus Club\",\n                    \"slug\": \"nexus-club\"\n                },\n                {\n                    \"id\": 10,\n                    \"name\": \"Laravel\",\n                    \"slug\": \"laravel\"\n                }\n            ]\n        },\n        {\n            \"id\": 14,\n            \"title\": \"Tenetur sint impedit sit delectus hic tenetur fugit.\",\n            \"slug\": \"tenetur-sint-impedit-sit-delectus-hic-tenetur-fugit\",\n            \"short_description\": \"Rerum qui esse et nostrum consequatur qui sunt. Laudantium facere corporis excepturi hic quia et dignissimos.\",\n            \"image_url\": null,\n            \"status\": \"published\",\n            \"published_at\": \"2024-08-12T00:14:16.000000Z\",\n            \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"categories\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Cyber Attack\",\n                    \"slug\": \"cyber-attack\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"Mobile Apps\",\n                    \"slug\": \"mobile-apps\"\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"Digital Marketing\",\n                    \"slug\": \"digital-marketing\"\n                }\n            ]\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"last_page\": 2,\n        \"per_page\": 15,\n        \"total\": 19,\n        \"from\": 1,\n        \"to\": 15\n    },\n    \"links\": {\n        \"first\": \"http://localhost:8000/api/v1/posts?page=1\",\n        \"last\": \"http://localhost:8000/api/v1/posts?page=2\",\n        \"prev\": null,\n        \"next\": \"http://localhost:8000/api/v1/posts?page=2\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/posts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Posts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:14:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Post created successfully\",\n    \"data\": {\n        \"id\": 35,\n        \"title\": \"testing\",\n        \"slug\": \"testing\",\n        \"short_description\": \"testing-short\",\n        \"image_url\": \"http://localhost:8000/images/posts/1751404465_vfUlvanc7u.jpg\",\n        \"status\": \"draft\",\n        \"published_at\": \"2025-07-01T06:15:00.000000Z\",\n        \"created_at\": \"2025-07-01T21:14:25.000000Z\",\n        \"updated_at\": \"2025-07-01T21:14:25.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Cyber Attack\",\n                \"slug\": \"cyber-attack\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Nexus Club\",\n                \"slug\": \"nexus-club\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/posts/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Posts",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/posts/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"posts",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:18:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Post updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"Vel ex necessitatibus qui.\",\n        \"slug\": \"vel-ex-necessitatibus-qui\",\n        \"short_description\": \"Fugiat ipsam eum quidem rem molestias aspernatur in. Voluptates aut rerum sed quam sunt perspiciatis molestias.\",\n        \"image_url\": null,\n        \"status\": \"published\",\n        \"published_at\": null,\n        \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n        \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"categories\": [\n            {\n                \"id\": 7,\n                \"name\": \"Business Strategy\",\n                \"slug\": \"business-strategy\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Design\",\n                \"slug\": \"design\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Laravel\",\n                \"slug\": \"laravel\"\n            }\n        ],\n        \"content\": \"Modi porro impedit et culpa omnis tempore voluptas. Voluptatum unde voluptatem minus incidunt corporis vero. Commodi veniam vero dolorem et.\\n\\nAut et deserunt voluptatum incidunt iste ut adipisci. Velit ad beatae explicabo officia vitae.\\n\\nOmnis dolorem sequi magnam est nihil. Aut ipsa facere dolor dolorem qui magnam nihil. Fuga placeat fugiat facilis aut consectetur dolorem. Ut beatae quis labore aut cumque aut veritatis.\\n\\nVeniam sunt nulla officiis dolorem repellat. Inventore tempore incidunt facilis aperiam in tenetur. Consequuntur dolores modi iusto at ex.\\n\\nHarum non repellendus dolorum sunt voluptatum enim. Et harum commodi cum mollitia voluptatum. Alias fugit dolor reiciendis dolores ducimus id.\\n\\nMagni minus aliquid sit eius. Similique natus rem qui labore voluptas rerum. Voluptates soluta error nostrum.\\n\\nSoluta cumque repellendus unde. Nam eveniet alias consequatur et consequatur ex cum. Dolorem aut beatae aliquam eos quas totam. Sequi perspiciatis eligendi adipisci nostrum sed exercitationem odit.\\n\\nQuo natus illo qui voluptatibus quasi facere dolorum dolores. Rerum qui repellat sed nisi iste quidem consequatur. Impedit dignissimos itaque quisquam incidunt omnis.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/posts/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Posts",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/posts/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"posts",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:19:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Post deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Pages",
+			"item": [
+				{
+					"name": "api/v1/pages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/pages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"pages"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Pages",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:22:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"title\": \"Pages Example\",\n            \"slug\": \"pages-example\",\n            \"status\": \"published\",\n            \"created_at\": \"2025-07-01T13:26:11.000000Z\",\n            \"updated_at\": \"2025-07-01T13:27:27.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"excerpt\": \"This is example of body page\"\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"per_page\": 15,\n        \"total\": 1,\n        \"from\": 1,\n        \"to\": 1\n    },\n    \"links\": {\n        \"first\": \"http://localhost:8000/api/v1/pages?page=1\",\n        \"last\": \"http://localhost:8000/api/v1/pages?page=1\",\n        \"prev\": null,\n        \"next\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/pages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Posts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:14:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Post created successfully\",\n    \"data\": {\n        \"id\": 35,\n        \"title\": \"testing\",\n        \"slug\": \"testing\",\n        \"short_description\": \"testing-short\",\n        \"image_url\": \"http://localhost:8000/images/posts/1751404465_vfUlvanc7u.jpg\",\n        \"status\": \"draft\",\n        \"published_at\": \"2025-07-01T06:15:00.000000Z\",\n        \"created_at\": \"2025-07-01T21:14:25.000000Z\",\n        \"updated_at\": \"2025-07-01T21:14:25.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"categories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Cyber Attack\",\n                \"slug\": \"cyber-attack\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Nexus Club\",\n                \"slug\": \"nexus-club\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Create Pages",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:24:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Page created successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"title\": \"testing\",\n        \"slug\": \"testing\",\n        \"status\": \"draft\",\n        \"created_at\": \"2025-07-01T21:24:30.000000Z\",\n        \"updated_at\": \"2025-07-01T21:24:30.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"body\": \"test-content\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/pages/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Posts",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/posts/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"posts",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:18:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Post updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"Vel ex necessitatibus qui.\",\n        \"slug\": \"vel-ex-necessitatibus-qui\",\n        \"short_description\": \"Fugiat ipsam eum quidem rem molestias aspernatur in. Voluptates aut rerum sed quam sunt perspiciatis molestias.\",\n        \"image_url\": null,\n        \"status\": \"published\",\n        \"published_at\": null,\n        \"created_at\": \"2025-06-30T22:06:47.000000Z\",\n        \"updated_at\": \"2025-06-30T22:06:47.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"categories\": [\n            {\n                \"id\": 7,\n                \"name\": \"Business Strategy\",\n                \"slug\": \"business-strategy\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Design\",\n                \"slug\": \"design\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Laravel\",\n                \"slug\": \"laravel\"\n            }\n        ],\n        \"content\": \"Modi porro impedit et culpa omnis tempore voluptas. Voluptatum unde voluptatem minus incidunt corporis vero. Commodi veniam vero dolorem et.\\n\\nAut et deserunt voluptatum incidunt iste ut adipisci. Velit ad beatae explicabo officia vitae.\\n\\nOmnis dolorem sequi magnam est nihil. Aut ipsa facere dolor dolorem qui magnam nihil. Fuga placeat fugiat facilis aut consectetur dolorem. Ut beatae quis labore aut cumque aut veritatis.\\n\\nVeniam sunt nulla officiis dolorem repellat. Inventore tempore incidunt facilis aperiam in tenetur. Consequuntur dolores modi iusto at ex.\\n\\nHarum non repellendus dolorum sunt voluptatum enim. Et harum commodi cum mollitia voluptatum. Alias fugit dolor reiciendis dolores ducimus id.\\n\\nMagni minus aliquid sit eius. Similique natus rem qui labore voluptas rerum. Voluptates soluta error nostrum.\\n\\nSoluta cumque repellendus unde. Nam eveniet alias consequatur et consequatur ex cum. Dolorem aut beatae aliquam eos quas totam. Sequi perspiciatis eligendi adipisci nostrum sed exercitationem odit.\\n\\nQuo natus illo qui voluptatibus quasi facere dolorum dolores. Rerum qui repellat sed nisi iste quidem consequatur. Impedit dignissimos itaque quisquam incidunt omnis.\"\n    }\n}"
+						},
+						{
+							"name": "Update Pages",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:25:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Page updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"Pages Example\",\n        \"slug\": \"pages-example\",\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-01T13:26:11.000000Z\",\n        \"updated_at\": \"2025-07-01T13:27:27.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"body\": \"<p>This is example of body page</p>\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/pages/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Posts",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/posts/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"posts",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:19:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Post deleted successfully\"\n}"
+						},
+						{
+							"name": "Delete Pages",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:26:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Page deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "api/v1/categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/pages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"pages"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Pages",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:22:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"title\": \"Pages Example\",\n            \"slug\": \"pages-example\",\n            \"status\": \"published\",\n            \"created_at\": \"2025-07-01T13:26:11.000000Z\",\n            \"updated_at\": \"2025-07-01T13:27:27.000000Z\",\n            \"author\": {\n                \"id\": 1,\n                \"name\": \"Test User\",\n                \"email\": \"test@example.com\"\n            },\n            \"excerpt\": \"This is example of body page\"\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"per_page\": 15,\n        \"total\": 1,\n        \"from\": 1,\n        \"to\": 1\n    },\n    \"links\": {\n        \"first\": \"http://localhost:8000/api/v1/pages?page=1\",\n        \"last\": \"http://localhost:8000/api/v1/pages?page=1\",\n        \"prev\": null,\n        \"next\": null\n    }\n}"
+						},
+						{
+							"name": "Get Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:27:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 7,\n            \"name\": \"Business Strategy\",\n            \"slug\": \"business-strategy\",\n            \"posts_count\": 5,\n            \"created_at\": \"2025-07-01T08:24:48.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:48.000000Z\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Cyber Attack\",\n            \"slug\": \"cyber-attack\",\n            \"posts_count\": 7,\n            \"created_at\": \"2025-07-01T08:13:13.000000Z\",\n            \"updated_at\": \"2025-07-01T08:13:13.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Design\",\n            \"slug\": \"design\",\n            \"posts_count\": 6,\n            \"created_at\": \"2025-07-01T08:24:48.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:48.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Digital Marketing\",\n            \"slug\": \"digital-marketing\",\n            \"posts_count\": 4,\n            \"created_at\": \"2025-07-01T08:24:48.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:48.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Laravel\",\n            \"slug\": \"laravel\",\n            \"posts_count\": 5,\n            \"created_at\": \"2025-07-01T08:24:48.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:48.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Mobile Apps\",\n            \"slug\": \"mobile-apps\",\n            \"posts_count\": 3,\n            \"created_at\": \"2025-07-01T08:24:48.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:48.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Nexus Club\",\n            \"slug\": \"nexus-club\",\n            \"posts_count\": 7,\n            \"created_at\": \"2025-07-01T08:13:29.000000Z\",\n            \"updated_at\": \"2025-07-01T08:13:29.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Programming\",\n            \"slug\": \"programming\",\n            \"posts_count\": 5,\n            \"created_at\": \"2025-07-01T08:24:48.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:48.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Technology\",\n            \"slug\": \"technology\",\n            \"posts_count\": 3,\n            \"created_at\": \"2025-07-01T08:24:47.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:47.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Web Development\",\n            \"slug\": \"web-development\",\n            \"posts_count\": 7,\n            \"created_at\": \"2025-07-01T08:24:47.000000Z\",\n            \"updated_at\": \"2025-07-01T08:24:47.000000Z\"\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"last_page\": 1,\n        \"per_page\": 15,\n        \"total\": 10,\n        \"from\": 1,\n        \"to\": 10\n    },\n    \"links\": {\n        \"first\": \"http://localhost:8000/api/v1/categories?page=1\",\n        \"last\": \"http://localhost:8000/api/v1/categories?page=1\",\n        \"prev\": null,\n        \"next\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Pages",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:24:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Page created successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"title\": \"testing\",\n        \"slug\": \"testing\",\n        \"status\": \"draft\",\n        \"created_at\": \"2025-07-01T21:24:30.000000Z\",\n        \"updated_at\": \"2025-07-01T21:24:30.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"body\": \"test-content\"\n    }\n}"
+						},
+						{
+							"name": "Create Categories",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"categories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:29:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"id\": 11,\n        \"name\": \"testing\",\n        \"slug\": \"testing\",\n        \"posts_count\": 0,\n        \"created_at\": \"2025-07-01T21:29:17.000000Z\",\n        \"updated_at\": \"2025-07-01T21:29:17.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/categories/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Pages",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:25:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Page updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"Pages Example\",\n        \"slug\": \"pages-example\",\n        \"status\": \"published\",\n        \"created_at\": \"2025-07-01T13:26:11.000000Z\",\n        \"updated_at\": \"2025-07-01T13:27:27.000000Z\",\n        \"author\": {\n            \"id\": 1,\n            \"name\": \"Test User\",\n            \"email\": \"test@example.com\"\n        },\n        \"body\": \"<p>This is example of body page</p>\"\n    }\n}"
+						},
+						{
+							"name": "Update Categories",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing tes",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/categories/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:30:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Nexus Club\",\n        \"slug\": \"nexus-club\",\n        \"posts_count\": 7,\n        \"created_at\": \"2025-07-01T08:13:29.000000Z\",\n        \"updated_at\": \"2025-07-01T08:13:29.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api/v1/categories/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "testing",
+									"type": "text"
+								},
+								{
+									"key": "short_description",
+									"value": "testing-short",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test-content",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2025-07-01 06:15:00",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_ids[1]",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/posts/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"posts",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Pages",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/pages/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"pages",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:26:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Page deleted successfully\"\n}"
+						},
+						{
+							"name": "Delete Categories",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "slug",
+											"value": "testing",
+											"type": "text"
+										},
+										{
+											"key": "short_description",
+											"value": "testing-short",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "test-content",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/organizer/Downloads/sunset-rinjani1.jpg"
+										},
+										{
+											"key": "status",
+											"value": "draft",
+											"type": "text"
+										},
+										{
+											"key": "published_at",
+											"value": "2025-07-01 06:15:00",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_ids[1]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/categories/10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"categories",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.17"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 21:31:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Authorization, X-Requested-With, Accept, Origin, X-CSRF-TOKEN"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

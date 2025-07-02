@@ -4,12 +4,6 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Admin Dashboard') }}
             </h2>
-            <div class="flex items-center space-x-3">
-                <a href="{{ route('api.documentation') }}" 
-                   class="inline-flex items-center px-4 py-2 bg-orange-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-orange-700 transition">
-                    📚 API Docs
-                </a>
-            </div>
         </div>
     </x-slot>
 

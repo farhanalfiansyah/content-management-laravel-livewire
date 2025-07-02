@@ -56,11 +56,6 @@ Route::middleware(['auth', 'verified'])->prefix('categories')->name('categories.
     Route::get('/{category}/edit', [\App\Http\Controllers\CategoryController::class, 'edit'])->name('edit');
 });
 
-// API Documentation routes
-Route::get('/api/documentation', function () {
-    return view('api.documentation');
-})->name('api.documentation');
 
-Route::get('/api/swagger.json', [App\Http\Controllers\SwaggerController::class, 'json'])->name('api.swagger');
 
 require __DIR__.'/auth.php';

@@ -10,92 +10,14 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 /**
- * @OA\Schema(
- *     schema="Page",
- *     @OA\Property(property="id", type="integer", example=1),
- *     @OA\Property(property="title", type="string", example="About Us"),
- *     @OA\Property(property="slug", type="string", example="about-us"),
- *     @OA\Property(property="status", type="string", enum={"draft", "published"}, example="published"),
- *     @OA\Property(property="created_at", type="string", format="date-time", example="2024-01-15T10:25:00.000000Z"),
- *     @OA\Property(property="updated_at", type="string", format="date-time", example="2024-01-15T10:30:00.000000Z"),
- *     @OA\Property(
- *         property="author",
- *         @OA\Property(property="id", type="integer", example=1),
- *         @OA\Property(property="name", type="string", example="John Doe"),
- *         @OA\Property(property="email", type="string", example="john@example.com")
- *     )
- * )
+ * Page API Controller
  * 
- * @OA\Schema(
- *     schema="PageDetailed",
- *     allOf={
- *         @OA\Schema(ref="#/components/schemas/Page"),
- *         @OA\Schema(
- *             @OA\Property(property="body", type="string", example="<p>Full page content with HTML...</p>")
- *         )
- *     }
- * )
- * 
- * @OA\Schema(
- *     schema="PageCreateRequest",
- *     required={"title", "body", "status"},
- *     @OA\Property(property="title", type="string", maxLength=255, example="Privacy Policy"),
- *     @OA\Property(property="slug", type="string", maxLength=255, example="privacy-policy"),
- *     @OA\Property(property="body", type="string", example="<p>Full page content with HTML...</p>"),
- *     @OA\Property(property="status", type="string", enum={"draft", "published"}, example="published")
- * )
- * 
- * @OA\Schema(
- *     schema="PageUpdateRequest",
- *     @OA\Property(property="title", type="string", maxLength=255, example="Updated Page Title"),
- *     @OA\Property(property="slug", type="string", maxLength=255, example="updated-page-title"),
- *     @OA\Property(property="body", type="string", example="<p>Updated page content...</p>"),
- *     @OA\Property(property="status", type="string", enum={"draft", "published"}, example="published")
- * )
+ * Handles CRUD operations for pages with validation
  */
 class PageController extends Controller
 {
     /**
-     * @OA\Get(
-     *     path="/api/v1/pages",
-     *     tags={"Pages"},
-     *     summary="Get all pages",
-     *     description="Retrieve a paginated list of pages with filtering and search capabilities",
-     *     @OA\Parameter(ref="#/components/parameters/search"),
-     *     @OA\Parameter(ref="#/components/parameters/status"),
-     *     @OA\Parameter(
-     *         name="include_drafts",
-     *         in="query",
-     *         description="Include draft pages",
-     *         required=false,
-     *         @OA\Schema(type="boolean", example=false)
-     *     ),
-     *     @OA\Parameter(ref="#/components/parameters/sort_by"),
-     *     @OA\Parameter(ref="#/components/parameters/sort_order"),
-     *     @OA\Parameter(ref="#/components/parameters/per_page"),
-     *     @OA\Parameter(ref="#/components/parameters/page"),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Pages retrieved successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/PaginatedResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(
-     *                         property="data",
-     *                         type="array",
-     *                         @OA\Items(ref="#/components/schemas/Page")
-     *                     )
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Get all pages
      */
     public function index(Request $request): JsonResponse
     {
@@ -174,38 +96,7 @@ class PageController extends Controller
     }
 
     /**
-     * @OA\Post(
-     *     path="/api/v1/pages",
-     *     tags={"Pages"},
-     *     summary="Create a new page",
-     *     description="Create a new static page with auto-generated slug",
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\JsonContent(ref="#/components/schemas/PageCreateRequest")
-     *     ),
-     *     @OA\Response(
-     *         response=201,
-     *         description="Page created successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/SuccessResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(property="data", ref="#/components/schemas/PageDetailed")
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=422,
-     *         description="Validation error",
-     *         @OA\JsonContent(ref="#/components/schemas/ValidationErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Create a new page
      */
     public function store(Request $request): JsonResponse
     {
@@ -264,41 +155,7 @@ class PageController extends Controller
     }
 
     /**
-     * @OA\Get(
-     *     path="/api/v1/pages/{slug}",
-     *     tags={"Pages"},
-     *     summary="Get a specific page",
-     *     description="Retrieve a single page by its slug, including full body content",
-     *     @OA\Parameter(
-     *         name="slug",
-     *         in="path",
-     *         required=true,
-     *         description="Page slug",
-     *         @OA\Schema(type="string", example="about-us")
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Page retrieved successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/SuccessResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(property="data", ref="#/components/schemas/PageDetailed")
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Page not found",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Get a specific page
      */
     public function show(string $slug): JsonResponse
     {
@@ -329,50 +186,7 @@ class PageController extends Controller
     }
 
     /**
-     * @OA\Put(
-     *     path="/api/v1/pages/{id}",
-     *     tags={"Pages"},
-     *     summary="Update a page",
-     *     description="Update an existing page by ID",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="Page ID",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\JsonContent(ref="#/components/schemas/PageUpdateRequest")
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Page updated successfully",
-     *         @OA\JsonContent(
-     *             allOf={
-     *                 @OA\Schema(ref="#/components/schemas/SuccessResponse"),
-     *                 @OA\Schema(
-     *                     @OA\Property(property="data", ref="#/components/schemas/PageDetailed")
-     *                 )
-     *             }
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Page not found",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=422,
-     *         description="Validation error",
-     *         @OA\JsonContent(ref="#/components/schemas/ValidationErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Update a page
      */
     public function update(Request $request, string $id): JsonResponse
     {
@@ -430,34 +244,7 @@ class PageController extends Controller
     }
 
     /**
-     * @OA\Delete(
-     *     path="/api/v1/pages/{id}",
-     *     tags={"Pages"},
-     *     summary="Delete a page",
-     *     description="Delete a page by ID",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="Page ID",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Page deleted successfully",
-     *         @OA\JsonContent(ref="#/components/schemas/SuccessResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Page not found",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Server error",
-     *         @OA\JsonContent(ref="#/components/schemas/ErrorResponse")
-     *     )
-     * )
+     * Delete a page
      */
     public function destroy(string $id): JsonResponse
     {

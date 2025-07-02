@@ -13,7 +13,7 @@ A modern content management system built with Laravel 12, featuring a clean admi
 - 🏷️ **Categories** - Organize content with categories
 - 🖼️ **Image Upload** - Upload and manage images
 - 🌍 **Multi-language** - Support for multiple languages
-- 🚀 **REST API** - Complete API with Swagger documentation
+- 🚀 **REST API** - Complete REST API endpoints
 - 📱 **Responsive** - Mobile-friendly admin interface
 
 ## Requirements
@@ -94,8 +94,7 @@ npm run dev
 
 ## API Documentation
 
-The REST API is available at `/api/v1/` with full Swagger documentation:
-- **API Documentation:** `http://localhost:8000/api/documentation`
+The REST API is available at `/api/v1/`:
 - **API Endpoints:** `http://localhost:8000/api/v1/posts`, `/api/v1/categories`, `/api/v1/pages`
 
 ## Basic Usage

@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 
+/**
+ * Base API Controller
+ * 
+ * Provides common functionality for API controllers
+ */
 abstract class ApiController extends Controller
 {
     use ApiResponseTrait;

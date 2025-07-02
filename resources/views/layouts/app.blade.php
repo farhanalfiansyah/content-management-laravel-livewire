@@ -304,15 +304,6 @@
                                     </div>
                                 </div>
                                 
-                                <!-- API Documentation Link -->
-                                <a href="{{ route('api.documentation') }}" 
-                                   class="inline-flex items-center px-2 sm:px-3 py-2 border border-transparent text-xs sm:text-sm leading-4 font-medium rounded-md text-orange-600 bg-orange-50 hover:bg-orange-100 transition-colors duration-200">
-                                    <svg class="w-3 h-3 sm:w-4 sm:h-4 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                    </svg>
-                                    <span class="hidden sm:inline">API Docs</span>
-                                    <span class="sm:hidden">API</span>
-                                </a>
                             </div>
                         </div>
                     </div>
